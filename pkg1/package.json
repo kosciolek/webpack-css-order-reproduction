@@ -1,0 +1,8 @@
+{
+  "name": "pkg1",
+  "main": "index.js",
+  "version": "0.0.1",
+  "sideEffects": [
+    "./index.js"
+  ]
+}
