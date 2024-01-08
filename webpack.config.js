@@ -9,7 +9,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.module\.css$/i,
+        test: /\.css$/i,
         // sideEffects: true, // doesnt work either
         use: [
           MiniCssExtractPlugin.loader,

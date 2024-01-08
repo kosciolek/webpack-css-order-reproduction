@@ -1,8 +1,8 @@
 {
-  "name": "pkg1",
+  "name": "child-package",
   "main": "index.js",
   "version": "0.0.1",
   "sideEffects": [
-    "*.module.css"
+    "*.css"
   ]
 }

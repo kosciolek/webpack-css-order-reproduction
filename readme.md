@@ -1,4 +1,4 @@
-Install deps **WITH YARN** (it links the `pkg1` subpackage):
+Install deps **with yarn** (it links the `child-package` subpackage):
 
 ```
 yarn
@@ -13,27 +13,37 @@ yarn webpack
 View `dist/main.css`:
 
 ```css
-.class__first-module__first{color:red}
-.class__second-module__second{color:green}
-.class__pkg1-module__pkg1Class{color:red}
+.first {
+  color: red;
+}
+
+.second {
+  color: green;
+}
+
+.child-packageClass {
+  color: blue;
+}
 ```
 
-`"sideEffects": [ "*.module.scss" ]` in the main `package.json` seems to work. If we do:
+The order is wrong. `.child-packageClass` should be first, because `child-package` is first in the imports:
 
-```js
-import first from "./first.module.scss";
-import second from "./second.module.scss";
+```
+import { child-package } from "child-package";
+import "./first.css";
+import "./second.css";
+
+child-package();
 ```
 
-Then in `main.css`, `first` classes will always be first. If you do `"sideEffects": false`, then webpack starts reodering them sometimes, which is okay.
+Webpack seems to reorder imports for side effect free modules. However, it should **not** happen for CSS imports, as they're marked as side effectful in package.json via `"sideEffects": [ "*.css" ]`. Setting `sideEffects: true` on the loader in `webpack.config.js` doesn't work either.
 
-However, it does NOT work when we introduce a subpackage. 
+The directive works for files in the root package. CSS Files that exist in the `src` dir will be loaded in the order they're imported in. However, **it does NOT work for subpackages**, like `child-package`. This is a a problem for monorepos.
 
-Classes are reordered, despite the css file being marked as effectful with `"sideEffects": [ "*.module.scss" ]`.
+# Other observations
 
-Using `"sideEffects": true` yields proper order, but disables all tree shaking.
+1. Setting `"sideEffects": true` in `child-package/package.json` generates the proper order (puts the `.child-packageClass` first), but disables all treeshaking.
 
-For whatever reason `"sideEffects": [ "./index.js" ]` also seems to work (using the path that is the client-facing entrypoint), but it's useless, we should be able to mark just CSS files.
-
+2. Same happens with CSS modules enabled.
 
 

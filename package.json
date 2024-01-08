@@ -1,13 +1,13 @@
 {
   "dependencies": {
+    "child-package": "portal:./child-package",
     "css-loader": "^6.8.1",
     "mini-css-extract-plugin": "^2.7.6",
-    "pkg1": "portal:./pkg1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
   "sideEffects": [
-    "*.module.css"
+    "*.css"
   ],
   "packageManager": "yarn@4.0.2"
 }

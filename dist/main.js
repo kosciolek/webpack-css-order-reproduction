@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("asd")})();
+(()=>{"use strict";console.log("child-package")})();

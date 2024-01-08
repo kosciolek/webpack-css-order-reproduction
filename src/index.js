@@ -1,5 +1,5 @@
-import { pkg1 } from "pkg1";
-import "./first.module.css";
-import "./second.module.css";
+import { childPackage } from "child-package";
+import "./first.css";
+import "./second.css";
 
-pkg1();
+childPackage();
