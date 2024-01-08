@@ -44,6 +44,6 @@ The directive works for files in the root package. CSS Files that exist in the `
 
 1. Setting `"sideEffects": true` in `child-package/package.json` generates the proper order (puts the `.child-packageClass` first), but disables all treeshaking.
 
-2. Same happens with CSS modules enabled.
+2. It does NOT happen if `child-package/package.json` has `"sideEffects": true` or the field is missing (`true` is the default value AFAIK), only if there's `"sideEffects": [ "*.css" ]`.
 
-
+3. Same happens with CSS modules enabled.
