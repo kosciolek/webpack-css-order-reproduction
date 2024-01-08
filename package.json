@@ -8,5 +8,8 @@
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
+  "sideEffects": [
+    "*.module.scss"
+  ],
   "packageManager": "yarn@4.0.2"
 }
