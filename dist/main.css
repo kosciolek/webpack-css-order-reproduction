@@ -1,3 +1,12 @@
-.class__first-module__first{color:red}
-.class__second-module__second{color:green}
-.class__pkg1-module__pkg1Class{color:red}
+.class__second-module__second {
+  color: green;
+}
+
+.class__first-module__first {
+  color: red;
+}
+
+.class__pkg1-module__pkg1Class {
+  color: red;
+}
+

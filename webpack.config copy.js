@@ -9,7 +9,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.module\.css$/i,
+        test: /\.module\.scss$/i,
         // sideEffects: true, // doesnt work either
         use: [
           MiniCssExtractPlugin.loader,
@@ -19,6 +19,12 @@ const config = {
               modules: {
                 localIdentName: "class__[name]__[local]",
               },
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"),
             },
           },
         ],
