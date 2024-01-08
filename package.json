@@ -7,7 +7,7 @@
     "webpack-cli": "^5.1.4"
   },
   "sideEffects": [
-    "*.module.scss"
+    "*.module.css"
   ],
   "packageManager": "yarn@4.0.2"
 }
