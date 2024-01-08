@@ -3,6 +3,6 @@
   "main": "index.js",
   "version": "0.0.1",
   "sideEffects": [
-    "*.module.scss"
+    "*.module.css"
   ]
 }
