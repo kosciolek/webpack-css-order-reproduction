@@ -1,3 +1,3 @@
-import styles from "./pkg1.module.css";
+import "./pkg1.module.css";
 
-export const pkg1 = () => console.log(styles.pkg1Class);
+export const pkg1 = () => console.log("asd");

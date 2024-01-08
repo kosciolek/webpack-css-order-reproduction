@@ -15,11 +15,6 @@ const config = {
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
-            options: {
-              modules: {
-                localIdentName: "class__[name]__[local]",
-              },
-            },
           },
         ],
       },

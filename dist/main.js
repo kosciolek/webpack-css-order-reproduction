@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("class__second-module__second"),console.log("class__first-module__first"),console.log("class__pkg1-module__pkg1Class")})();
+(()=>{"use strict";console.log("asd")})();
