@@ -47,3 +47,7 @@ The directive works for files in the root package. CSS Files that exist in the `
 2. It does NOT happen if `child-package/package.json` has `"sideEffects": true` or the field is missing (`true` is the default value AFAIK), only if there's `"sideEffects": [ "*.css" ]`.
 
 3. Same happens with CSS modules enabled.
+
+# UPDATE
+
+Upgrading webpack to 5.90.2 seems to fix the issue.
